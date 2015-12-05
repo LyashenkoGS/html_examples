@@ -1,0 +1,104 @@
+<html><head>
+    <title>tests</title>
+    <link href="/resources/test.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="test">
+    
+    <form  method="post">
+        <div>my_test:1</div>
+        <input name="testName" type="hidden" value="my_test">
+        <ol>
+            
+                <li class="question">
+                      <div> Can we have multiple classes in same java file?:4</div>
+					   <!--comment node-->
+                    <ul>
+                        <li>
+                            <input  name="Can we have multiple classes in same java file?" type="radio" value="True">True
+                        </li>
+                        
+                            <li>
+                                <input name="Can we have multiple classes in same java file?" type="radio" value="False"> False
+                            </li>
+                        
+                    </ul>
+
+                </li>
+            
+                <li class="question">
+                       <div>Primitive variables are stored on Stack:3</div>
+                    <ul>
+                        <li>
+                            <input name="Primitive variables are stored on Stack" type="radio" value="True">True
+                        </li>
+                        
+                    </ul>
+
+                </li>
+            
+                <li class="question">
+                       <div>my_question:1  </div>
+                    <ul>
+                        <li>
+                            <input name="my_question" type="radio" value="right_answer">right_answer
+                        </li>
+                        
+                            <li>
+                                <input name="my_question" type="radio" value="wrong_answer1"> wrong_answer1
+                            </li>
+                        
+                            <li>
+                                <input name="my_question" type="radio" value="wrong_answer2"> wrong_answer2
+                            </li>
+                        
+                    </ul>
+
+                </li>
+            
+        </ol>
+      <!--   <input type="submit" value="answer" onclick="createQuestionAnswerJSON()"> -->
+	 <div  onclick="createQuestionAnswerJSON(event)">clickMe</div>
+        </form>
+       	
+
+
+</div>
+
+
+
+<div id="demo"></div>
+<script>
+
+function createQuestionAnswerJSON(event) {
+
+var submitButton=event.target
+	var testName=submitButton.parentElement.firstElementChild.textContent
+	var questionsBlocks=submitButton.parentElement.getElementsByClassName('question')
+	var json="{"
+for (i = 0; i < questionsBlocks.length; i++) {
+    json +="'"+questionsBlocks[i].firstElementChild.textContent+"'";
+	var answersBlocks=questionsBlocks[i].getElementsByTagName('input')
+	
+	for(z = 0; z < answersBlocks.length; z++){
+	if(answersBlocks[z].checked){
+	console.log(i!==questionsBlocks.length-1)
+		if(i!==questionsBlocks.length-1){
+		json+=": '"+answersBlocks[z].getAttribute('value')+"',"}
+		else{
+		json+=": '"+answersBlocks[z].getAttribute('value')+"'"
+		}
+		}
+	
+	}
+}
+json+="}"
+console.log(json)
+
+
+}
+</script>
+
+
+
+</body></div></html>

@@ -1,0 +1,145 @@
+<html hc="delumine-smart "><head>
+    <title>tests</title>
+    <link href="/resources/test.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="test">
+    
+    <form action="answer" method="post">
+        <div>my_test:1</div>
+        <input name="testName" type="hidden" value="my_test">
+        <ol>
+            
+                <li>
+                        Can we have multiple classes in same java file?:4
+                    <ul>
+                        <li>
+                            <input name="Can we have multiple classes in same java file?" type="radio" value="True">True
+                        </li>
+                        
+                            <li>
+                                <input name="Can we have multiple classes in same java file?" type="radio" value="False"> False
+                            </li>
+                        
+                    </ul>
+
+                </li>
+            
+                <li>
+                        Primitive variables are stored on Stack:3
+                    <ul>
+                        <li>
+                            <input name="Primitive variables are stored on Stack" type="radio" value="True">True
+                        </li>
+                        
+                    </ul>
+
+                </li>
+            
+                <li>
+                        my_question:1
+                    <ul>
+                        <li>
+                            <input name="my_question" type="radio" value="right_answer">right_answer
+                        </li>
+                        
+                            <li>
+                                <input name="my_question" type="radio" value="wrong_answer1"> wrong_answer1
+                            </li>
+                        
+                            <li>
+                                <input name="my_question" type="radio" value="wrong_answer2"> wrong_answer2
+                            </li>
+                        
+                    </ul>
+
+                </li>
+            
+        </ol>
+        <input type="submit">
+        </form>
+        
+
+
+</div>
+<div id="manager">
+    TestManager
+
+    
+
+    <form action="addTest" method="POST">
+        <input type="text" name="name" placeholder="name">
+        <input type="submit" value="addTest">
+    </form>
+
+    <form action="addQuestion" method="POST">
+        <input type="text" name="testName" placeholder="testId">
+        <input type="text" name="question" placeholder="question">
+        <input type="submit" value="addQuestion">
+    </form>
+
+    <form action="addRightAnswer" method="post">
+        <input type="text" name="questionName" placeholder="questionId">
+        <input type="text" name="rightAnswer" placeholder="rightAnswer">
+        <input type="submit" value="addRightAnswer">
+    </form>
+
+    <form action="addWrongAnswer" method="post">
+        <input type="text" name="questionName" placeholder="questionId">
+        <input type="text" name="wrongAnswer" placeholder="wrongAnswer">
+        <input type="submit" value="addWrongAnswer">
+    </form>
+
+    
+
+    <form action="updateTest" method="POST">
+        <input type="text" name="oldTestName" placeholder="oldTest">
+        <input type="text" name="newTestName" placeholder="newTest">
+        <input type="submit" value="updateTest">
+    </form>
+
+    <form action="updateQuestion" method="POST">
+        <input type="text" name="oldQuestionName" placeholder="oldQuestionName">
+        <input type="text" name="newQuestion" placeholder="newQuestion">
+        <input type="submit" value="updateQuestion">
+    </form>
+
+    <form action="updateRightAnswer" method="post">
+        <input type="text" name="oldRightName" placeholder="oldRightName">
+        <input type="text" name="newRightAnswer" placeholder="newRightAnswer">
+        <input type="submit" value="updateRightAnswer">
+    </form>
+
+    <form action="updateWrongAnswer" method="post">
+        <input type="text" name="oldWrongAnswer" placeholder="oldWrongAnswer">
+        <input type="text" name="newWrongAnswer" placeholder="newWrongAnswer">
+        <input type="submit" value="updateWrongAnswer">
+    </form>
+
+    
+
+    <form action="deleteTest" method="POST">
+        <input type="text" name="name" placeholder="nameTest">
+        <input type="submit" value="deleteTest">
+    </form>
+
+    <form action="deleteQuestion" method="POST">
+        <input type="text" name="name" placeholder="questionName">
+        <input type="submit" value="deleteQuestion">
+    </form>
+
+    <form action="deleteRightAnswer" method="post">
+        <input type="text" name="name" placeholder="rightAnswerName">
+        <input type="submit" value="deleteRightAnswer">
+    </form>
+
+    <form action="deleteWrongAnswer" method="post">
+        <input type="text" name="name" placeholder="wrongAnswerName">
+        <input type="submit" value="deleteWrongAnswer">
+    </form>
+
+</div>
+
+
+
+<div></div></body><div id="deluminate_fullscreen_workaround" style="height: 498px; width: 1263px; background: none 0% 0% / auto repeat scroll padding-box border-box white;"></div></html>
