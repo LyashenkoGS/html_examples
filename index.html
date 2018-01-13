@@ -5,6 +5,8 @@
     <title>Tic tac toe game</title>
 </head>
 <body>
+<div>Yours sign: X</div>
+<div>PC sign: 0</div>
 <table id="someTable">
     <tr>
         <td></td>
@@ -17,7 +19,7 @@
         <td></td>
     </tr>
     <tr>
-        <td>hh</td>
+        <td></td>
         <td></td>
         <td></td>
     </tr>
@@ -34,14 +36,15 @@
     td {
         border: solid 1px black;
         text-align: center;
-        width: 20px;
-        height: 20px;
+        width: 100px;
+        height: 100px;
+        font-size: 120px;
     }
 
     #someTable {
         border: 1px solid black;
-        width: 100px;
-        height: 100px;
+        width: 500px;
+        height: 500px;
         background: gainsboro;
     }
 
@@ -50,23 +53,68 @@
     }
 </style>
 <script>
-    // "use strict";
-    var table = document.getElementById("someTable");
-    //  table.innerHTML = "asdfasdfasdfafasfdasfsadfsafdasdfasf";
-    console.log("azaza");
-    //iterate over all td
-    var cells = document.getElementById("someTable").getElementsByTagName("td");
-    var random = Math.floor(Math.random() * (8 + 1));
-    console.log("random: " + random);
-    cells[random].innerText = "x";
-    for (var i = 0; i < cells.length; i++) {
-        console.log(cells[i].innerText); //second console output
-    }
-    //random between 0 and 8 inclusively
-    console.log(random)
+    //on click make a step
+    document.getElementById("someTable").onclick = function someFunction(event) {
+        event.srcElement.textContent = "x";
+        checkWinner("x")
+        //make PC step with some delay
+        makeRandomStep();
+        checkWinner("0")
+    };
 
-    //on click get clicked element and set it to X
-    document.getElementById("someTable").onclick()
-    //console.assert(document.getElementById("someTable").innerText.localeCompare("asdfasdfasdfafasfdasfsadfsafdasdfasf","something goes wrong")===0)
+    function makeRandomStep() {
+        var cells = document.getElementById("someTable").getElementsByTagName("td");
+        var emptyCells = [];
+        for (var i = 0; i < cells.length; i++) {
+            if (cells[i].innerText === "") {
+                console.log("empty cell id :" + i);
+                emptyCells.push(i)
+            }
+        }
+        random = Math.floor(Math.random() * (emptyCells.length));
+        cells[emptyCells[random]].innerText = "0";
+    }
+
+    function checkWinner(playerSign) {
+        //check horizontals
+        var winMessage = "WIN player with " + playerSign + "!!";
+        var rows = document.getElementById("someTable").getElementsByTagName("tr");
+        for (var i = 0; i < rows.length; i++) {
+            if (rows[i].innerText === "x\tx\tx" && playerSign === "x") {
+                displayWinner()
+                break;
+            }
+            if (rows[i].innerText === "0\t0\t0" && playerSign === "0") {
+                displayWinner()
+                break;
+            }
+        }
+        //check verticals
+        var cells = document.getElementById("someTable").getElementsByTagName("td");
+        if (cells[1].innerText === playerSign && cells[4].innerText === playerSign && cells[7].innerText === playerSign) {
+            displayWinner();
+        }
+        if (cells[0].innerText === playerSign && cells[3].innerText === playerSign && cells[6].innerText === playerSign) {
+            displayWinner();
+        }
+        if (cells[2].innerText === playerSign && cells[2].innerText === playerSign && cells[8].innerText === playerSign) {
+            displayWinner();
+        }
+        //if diagonal
+        if (cells[0].innerText === playerSign && cells[4].innerText === playerSign && cells[8].innerText === playerSign) {
+            displayWinner();
+        }
+
+        function displayWinner() {
+            console.log(winMessage)
+            alert(winMessage)
+        }
+
+        //if reverse diagonale
+        if (cells[2].innerText === playerSign && cells[4].innerText === playerSign && cells[6].innerText === playerSign) {
+            displayWinner();
+        }
+    }
+
 </script>
 </html>
