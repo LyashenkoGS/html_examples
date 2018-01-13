@@ -1,0 +1,22 @@
+{
+  "name": "html_examples",
+  "version": "1.0.0",
+  "description": "Contains samples of HTML, CSS, JavaScript, that coud be reused in future.  -Task from Sergey- a task from Epam, C# internature. Conteint a .jpg how  does it should look and my attitude to done it. -JSON - author's own 'bicycle' to parse JSON from many input tags",
+  "main": "hello-world.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LyashenkoGS/html_examples.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LyashenkoGS/html_examples/issues"
+  },
+  "homepage": "https://github.com/LyashenkoGS/html_examples#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
