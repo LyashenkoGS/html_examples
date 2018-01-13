@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic tac toe game</title>
+</head>
+<body>
+<table id="someTable">
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>hh</td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+</body>
+<style>
+    table {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+
+    td {
+        border: solid 1px black;
+        text-align: center;
+        width: 20px;
+        height: 20px;
+    }
+
+    #someTable {
+        border: 1px solid black;
+        width: 100px;
+        height: 100px;
+        background: gainsboro;
+    }
+
+    body {
+        background-color: bisque;
+    }
+</style>
+<script>
+    // "use strict";
+    var table = document.getElementById("someTable");
+    //  table.innerHTML = "asdfasdfasdfafasfdasfsadfsafdasdfasf";
+    console.log("azaza");
+    //iterate over all td
+    var cells = document.getElementById("someTable").getElementsByTagName("td");
+    var random = Math.floor(Math.random() * (8 + 1));
+    console.log("random: " + random);
+    cells[random].innerText = "x";
+    for (var i = 0; i < cells.length; i++) {
+        console.log(cells[i].innerText); //second console output
+    }
+    //random between 0 and 8 inclusively
+    console.log(random)
+
+    //on click get clicked element and set it to X
+    document.getElementById("someTable").onclick()
+    //console.assert(document.getElementById("someTable").innerText.localeCompare("asdfasdfasdfafasfdasfsadfsafdasdfasf","something goes wrong")===0)
+</script>
+</html>
